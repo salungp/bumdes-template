@@ -157,6 +157,10 @@
 }
 
 @media (max-width: 768px) {
+  .navbar-toggler .navbar-toggler-icon {
+    color: #ffffff;
+  }
+
   .banner {
     height: 360px;
   }
@@ -291,13 +295,55 @@ section .title p {
 }
 
 .image-wrapper .image-item {
-  height: 180px;
+  height: 200px;
   border-radius: 4px !important;
   overflow: hidden !important;
 }
 
 .image-wrapper img {
-  height: 180px;
+  height: 200px;
   width: 100%;
   object-fit: cover;
+}
+
+.gambar .carousel-container {
+  position: relative;
+}
+
+/* .gambar .carousel-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  background: linear-gradient(to right, rgba(255,255,255,.9), rgba(255,255,255,.7), rgba(255,255,255,0));
+  z-index: 8;
+} */
+
+.gambar .owl-nav {
+  width: 101%;
+  position: absolute;
+  left: -1px;
+  z-index: 2;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
+}
+
+.gambar .owl-nav button {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  font-size: 26px;
+  background: #ffffff;
+  color: #444444;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.gambar .owl-nav button:focus {
+  outline: none;
 }
