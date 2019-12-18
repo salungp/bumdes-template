@@ -446,3 +446,10 @@ footer p {
   margin: 0;
   padding: 9;
 }
+
+@media (max-width: 786px) {
+  footer p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+}
