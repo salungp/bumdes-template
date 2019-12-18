@@ -165,12 +165,35 @@
 }
 
 @media (max-width: 768px) {
-  .navbar-toggler .navbar-toggler-icon {
-    color: #ffffff;
+  .navbar {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .navbar-toggler {
+    color: #ffffff !important;
+  }
+
+  .navbar-collapse {
+    background: #ffffff !important;
+  }
+
+  .navbar-toggler:focus {
+    outline: none;
+  }
+
+  .navbar-brand {
+    color: #ffffff !important;
   }
 
   .banner {
-    height: 360px;
+    height: 400px;
+    padding-top: 40px;
   }
 
   .overlay {
@@ -362,6 +385,14 @@ section .title p {
   left: 0;
   width: 100%;
   background: #ffffff;
+}
+
+.nav-active .navbar-brand {
+  color: #333333 !important;
+}
+
+.nav-active .navbar-toggler {
+  color: #333333 !important;
 }
 
 .footer {
