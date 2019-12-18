@@ -78,6 +78,7 @@
   background: url('../images/banner.jpg') center center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .banner::before {
@@ -140,6 +141,12 @@
     right: 0;
     border-bottom: 170px solid #fafafa; 
   }
+  .btn-search {
+    display: none;
+  }
+  .search-bar {
+    padding-left: 15px;
+  }
 }
 
 
@@ -175,6 +182,16 @@
     width: 100%;
   }
 
+  .btn-search {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    bottom: 2px;
+    color: #ffffff;
+  }
+
   .navbar-toggler {
     color: #ffffff !important;
   }
@@ -204,6 +221,25 @@
     height: 360px;
   }
 
+  .news-item {
+    height: 180px !important;
+  }
+
+  .news-item .text {
+    bottom: 13px !important;
+    left: 13px !important;
+    padding-right: 10px;
+    width: calc(100% - 13px);
+  }
+
+  .news-item .content-title {
+    font-size: 25px !important;
+  }
+
+  .title h2 {
+    font-size: 25px !important;
+  }
+
   .banner h1 {
     font-size: 32px;
   }
@@ -231,6 +267,10 @@
   }
 
   .info-grafik-wrapper {
+    display: none;
+  }
+
+  .navbar-collapse .button-search {
     display: none;
   }
 }
@@ -391,6 +431,10 @@ section .title p {
   color: #333333 !important;
 }
 
+.nav-active .btn-search {
+  color: #333;
+}
+
 .nav-active .navbar-toggler {
   color: #333333 !important;
 }
@@ -458,11 +502,18 @@ section .title p {
     border-bottom: 1px solid rgba(255,255,255,.1);
   }
 
+  .footer .col-md-4:nth-child(2) {
+    padding-bottom: 40px !important;
+  }
+
   .footer .col-md-4:last-child {
     border: none;
     margin-bottom: 0;
   }
+}
 
+.hide {
+  opacity: 0;
 }
 
 footer {
@@ -483,4 +534,56 @@ footer p {
     font-size: 13px;
     line-height: 22px;
   }
+
+  .navbar-toggler, .btn-search {
+    z-index: 7;
+  }
+}
+
+.navbar .container {
+  position: relative;
+}
+
+.navbar form {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+}
+
+.search-bar {
+  position: absolute;
+  z-index: 4;
+  background: #ffffff;
+  top: 0;
+  border: none;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 20px;
+  padding-right: 30px;
+}
+
+.bg {
+  background-color: #ffffff;
+}
+
+.search-bar:focus {
+  outline: none;
+}
+
+.navbar-toggler, .btn-search {
+  position: relative;
+  z-index: 5;
+}
+
+.button-search {
+  position: relative;
+  z-index: 6;
+}
+
+button:focus {
+  outline: none;
 }
