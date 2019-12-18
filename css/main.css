@@ -297,7 +297,7 @@ section .title p {
 }
 
 .image-wrapper img {
-  height: 100%;
+  height: 180px;
   width: 100%;
   object-fit: cover;
 }
