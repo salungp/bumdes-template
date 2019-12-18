@@ -129,7 +129,7 @@
         </div>
         <div class="row">
           <div class="col-md-4">
-            <div class="news-item" style="background-image: url(images/harley-davidson-kmTq5GU6c-0-unsplash.jpg);">
+            <div class="news-item" style="background-repeat: no-repeat;background-size: cover;background-image: url(images/harley-davidson-kmTq5GU6c-0-unsplash.jpg);">
               <div class="text">
                 <a href="#" class="content-title">Harga bawang mulai melonjak</a>
                 <div class="d-flex">
@@ -142,7 +142,7 @@
           </div>
 
           <div class="col-md-4">
-            <div class="news-item" style="background-image: url(images/harley-davidson-kmTq5GU6c-0-unsplash.jpg);">
+            <div class="news-item" style="background-repeat: no-repeat;background-size: cover;background-image: url(images/harley-davidson-kmTq5GU6c-0-unsplash.jpg);">
               <div class="text">
                 <a href="#" class="content-title">Harga bawang mulai melonjak</a>
                 <div class="d-flex">
@@ -155,7 +155,7 @@
           </div>
 
           <div class="col-md-4">
-            <div class="news-item" style="background-image: url(images/harley-davidson-kmTq5GU6c-0-unsplash.jpg);">
+            <div class="news-item" style="background-repeat: no-repeat;background-size: cover;background-image: url(images/harley-davidson-kmTq5GU6c-0-unsplash.jpg);">
               <div class="text">
                 <a href="#" class="content-title">Harga bawang mulai melonjak</a>
                 <div class="d-flex">
@@ -168,7 +168,7 @@
           </div>
 
           <div class="col-md-4">
-            <div class="news-item" style="background-image: url(images/harley-davidson-kmTq5GU6c-0-unsplash.jpg);">
+            <div class="news-item" style="background-repeat: no-repeat;background-size: cover;background-image: url(images/harley-davidson-kmTq5GU6c-0-unsplash.jpg);">
               <div class="text">
                 <a href="#" class="content-title">Harga bawang mulai melonjak</a>
                 <div class="d-flex">
@@ -181,7 +181,7 @@
           </div>
 
           <div class="col-md-4">
-            <div class="news-item" style="background-image: url(images/harley-davidson-kmTq5GU6c-0-unsplash.jpg);">
+            <div class="news-item" style="background-repeat: no-repeat;background-size: cover;background-image: url(images/harley-davidson-kmTq5GU6c-0-unsplash.jpg);">
               <div class="text">
                 <a href="#" class="content-title">Harga bawang mulai melonjak</a>
                 <div class="d-flex">
@@ -194,7 +194,7 @@
           </div>
 
           <div class="col-md-4">
-            <div class="news-item" style="background-image: url(images/harley-davidson-kmTq5GU6c-0-unsplash.jpg);">
+            <div class="news-item" style="background-repeat: no-repeat;background-size: cover;background-image: url(images/harley-davidson-kmTq5GU6c-0-unsplash.jpg);">
               <div class="text">
                 <a href="#" class="content-title">Harga bawang mulai melonjak</a>
                 <div class="d-flex">
@@ -250,6 +250,22 @@
     <script src="./js/bootstrap.min.js"></script>
     <script>
       $('.carousel').carousel();
+      $('.image-wrapper').owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: true,
+        responsive: {
+          0: {
+            items: 1
+          },
+          768: {
+            items: 2
+          },
+          900: {
+            items: 4
+          }
+        }
+      });
       $('.overlay').css('border-left', window.innerWidth + 'px solid transparent');
     </script>
   </body>
