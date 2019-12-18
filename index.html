@@ -277,6 +277,7 @@
           </div>
           <div class="col-md-4">
             <p>Subscribe to Our Newsletter to get Important News, Amazing Offers & Inside Scoops:</p>
+            <!-- Form subscribe -->
             <form>
               <div class="btn-group input-group">
                 <input type="email" name="" class="form-control" required placeholder="Enter your email...">
@@ -285,6 +286,8 @@
                 </button>
               </div>
             </form>
+
+            <!-- Social links -->
             <div class="social-links">
               <a href="#" class="facebook">
                 <i class="fa fa-facebook"></i>
@@ -293,15 +296,21 @@
                 <i class="fa fa-twitter"></i>
               </a>
             </div>
+            <!-- end social links -->
           </div>
         </div>
       </div>
     </section>
+
     <footer>
       <div class="container">
-        <p>Copyrights © 2019 All Rights Reserved by bumdes.or.id .</p>
+        <p>Copyrights © 2019 All Rights Reserved by bumdes.or.id.</p>
       </div>
     </footer>
+
+    <button class="scroll-top" type="button">
+      <i class="fa fa-chevron-up"></i>
+    </button>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -341,7 +350,9 @@
         }
       };
 
+      // Created cons boolean
       var bool = false;
+
       $('.button-search').on('click', e => {
         bool = !bool;
         e.preventDefault();
@@ -356,10 +367,14 @@
       $('.btn-search').on('click', e => {
         e.preventDefault();
         bool = !bool;
+
         $('.search-bar-wrapper').toggle();
         $('.navbar-brand').toggleClass('hide');
         $('.navbar').toggleClass('bg');
-        const target = $('.btn-search');
+
+        const target = $('.btn-search'),
+              oldColor = target.css('color');
+
         if (bool) {
           target.html('<i class="fa fa-remove"></i>');
           target.css('color', '#333333');
@@ -371,6 +386,35 @@
         }
       });
       $('.overlay').css('border-left', window.innerWidth + 'px solid transparent');
+
+
+      // Action scroll top
+      function backToTop() {
+        this.button = $('.scroll-top');
+        this.target = 240;
+        this.customClass = 'scroll-top-active';
+        this.value = $(document).scrollTop();
+      }
+
+      backToTop.prototype.run = function() {
+        const self = this;
+        const value = self.value;
+
+        if (value >= self.target) {
+          self.button.addClass(self.customClass);
+        } else if (value <= self.target) {
+          self.button.removeClass(self.customClass);
+        }
+      };
+
+      // Run event
+      $(document).on('scroll', () => {
+        new backToTop().run();
+      });
+
+      $('.scroll-top').on('click', () => {
+        $(document).scrollTop(0);
+      });
     </script>
   </body>
 </html>

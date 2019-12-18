@@ -432,10 +432,10 @@ section .title p {
 }
 
 .nav-active .btn-search {
-  color: #333;
+  color: #333 !important;
 }
 
-.nav-active .navbar-toggler {
+.nav-active .navbar-toggler .fa-reorder {
   color: #333333 !important;
 }
 
@@ -586,4 +586,44 @@ footer p {
 
 button:focus {
   outline: none;
+}
+
+/* Button back to top */
+.scroll-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
+  color: #ffffff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: .2s ease-in-out;
+  z-index: 9999999;
+  background-color: #1dd1a1;
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+.scroll-top:hover {
+  background: rgba(29, 209, 161,1);
+}
+
+/* If scroll top more than 240 */
+.scroll-top-active {
+  transform: scale(1);
+  border-radius: 4px;
+}
+
+.scroll-top:active {
+  box-shadow: 0 0 0 4px rgba(29, 209, 161,.5);
+}
+
+/* Add animate smooth scroll */
+html {
+  scroll-behavior: smooth;
 }
