@@ -278,6 +278,16 @@
         navText: ['<i class="fa fa-long-arrow-left"></i>', '<i class="fa fa-long-arrow-right"></i>'],
         dots: false,
       });
+      window.onscroll = e => {
+        let jarak = 200;
+        let target = $(document).scrollTop();
+
+        if (target > jarak) {
+          $('.navbar').addClass('nav-active');
+        } else if (target < jarak) {
+          $('.navbar').removeClass('nav-active');
+        }
+      };
       $('.overlay').css('border-left', window.innerWidth + 'px solid transparent');
     </script>
   </body>

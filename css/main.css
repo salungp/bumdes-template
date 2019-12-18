@@ -347,3 +347,12 @@ section .title p {
 .gambar .owl-nav button:focus {
   outline: none;
 }
+
+.nav-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  transition: .4s;
+}
