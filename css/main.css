@@ -287,5 +287,17 @@ section .title p {
 }
 
 .gambar {
-  padding: 40px;
+  padding: 40px 0;
+}
+
+.image-wrapper .image-item {
+  height: 180px;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+}
+
+.image-wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
