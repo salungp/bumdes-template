@@ -51,24 +51,66 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
+
+            <!-- Hover dropdown -->
+            <li class="nav-item hover-dropdown">
+              <a class="nav-link hover-dropdown-btn" href="#">Profil</a>
+              <ul class="hover-dropdown-items">
+                <li>
+                  <a href="#">Sejarah</a>
+                </li>
+                <li>
+                  <a href="#">Struktur</a>
+                </li>
+                <li>
+                  <a href="#">Visi dan misi</a>
+                </li>
+                <li>
+                  <a href="#">Capaian</a>
+                </li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Produk</a>
+            <!-- end hover dropdown -->
+
+            <li class="nav-item hover-dropdown">
+              <a class="nav-link hover-dropdown-btn" href="#">Produk</a>
+              <ul class="hover-dropdown-items">
+                <li class="hover-dropdown-child">
+                  <a href="#" class="hover-dropdown-btn">Jasa layanan</a>
+                  <ul class="hover-dropdown-items-child">
+                    <li>
+                      <a href="#">Pembentukan Bumdes</a>
+                    </li>
+                    <li>
+                      <a href="#">Pendampingan Bumdes</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">SIB</a>
+                </li>
+                <li>
+                  <a href="#">Jejaring Bumdes</a>
+                </li>
+              </ul>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#">Arsip</a>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#">News</a>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#">Info grafis</a>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#">Desa wisata</a>
             </li>
+
             <li class="nav-item button-search">
               <a class="nav-link" href="#">
                 <i class="fa fa-search"></i>
@@ -387,6 +429,27 @@
       });
       $('.overlay').css('border-left', window.innerWidth + 'px solid transparent');
 
+      const customStyle = {
+        hoverDropdown: {
+          navbarHeight: $('.navbar').innerHeight(),
+          item: $('.hover-dropdown').children('.hover-dropdown-items')
+        },
+        navLink: {
+          height: $('.navbar').css('height'),
+          target: $('.nav-item')
+        }
+      }
+
+      // Apply hover dropdown
+      const { hoverDropdown, navLink } = customStyle;
+      const { navbarHeight, item } = hoverDropdown;
+      const { height, target } = navLink;
+
+      // if window width more than 900px
+      if ($(document).width() >= 900) {
+        target.css('height', height + 'px !important');
+        item.css('top', navbarHeight + 'px');
+      }
 
       // Action scroll top
       function backToTop() {
@@ -406,6 +469,13 @@
           self.button.removeClass(self.customClass);
         }
       };
+
+      const hoverDropdownBtn = $('.hover-dropdown-btn');
+      hoverDropdownBtn.on('click', e => {
+        e.preventDefault();
+        const next = $(e.target).next();
+        next.slideToggle();
+      });
 
       // Run event
       $(document).on('scroll', () => {
