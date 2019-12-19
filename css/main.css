@@ -209,6 +209,9 @@
     box-shadow: 0 2px 30px 1px rgba(0,0,0,.06);
     transition: .2s ease-out;
   }
+  .hover-dropdown-btn i {
+    display: none;
+  }
 }
 
 
@@ -344,6 +347,7 @@
   .hover-dropdown-items, .hover-dropdown-items-child {
     padding: 0;
     display: none;
+    border-radius: 5px;
     overflow: hidden;
   }
 
@@ -397,6 +401,10 @@ section .title p {
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
+}
+
+.news-item:hover {
+  box-shadow: 0 3px 10px 1px rgba(0,0,0,.3);
 }
 
 .news-item::before {
